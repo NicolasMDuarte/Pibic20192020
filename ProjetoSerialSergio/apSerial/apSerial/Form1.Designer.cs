@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSend = new System.Windows.Forms.Button();
             this.txtSend = new System.Windows.Forms.TextBox();
@@ -48,6 +47,8 @@
             this.Poluente1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Poluente2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Poluente3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtArquivoExcel = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
@@ -56,23 +57,25 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.txtArquivoExcel);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dgv);
             this.panel1.Controls.Add(this.btnSend);
             this.panel1.Controls.Add(this.txtSend);
             this.panel1.Controls.Add(this.txtReceive);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 152);
+            this.panel1.Location = new System.Drawing.Point(0, 142);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(745, 323);
+            this.panel1.Size = new System.Drawing.Size(745, 303);
             this.panel1.TabIndex = 0;
             // 
             // btnSend
             // 
             this.btnSend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSend.Font = new System.Drawing.Font("Modern No. 20", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSend.Location = new System.Drawing.Point(654, 12);
+            this.btnSend.Location = new System.Drawing.Point(654, 11);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(79, 49);
+            this.btnSend.Size = new System.Drawing.Size(79, 46);
             this.btnSend.TabIndex = 3;
             this.btnSend.Text = "Send";
             this.btnSend.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -82,27 +85,27 @@
             // txtSend
             // 
             this.txtSend.Enabled = false;
-            this.txtSend.Location = new System.Drawing.Point(635, 22);
+            this.txtSend.Location = new System.Drawing.Point(635, 21);
             this.txtSend.Name = "txtSend";
-            this.txtSend.Size = new System.Drawing.Size(13, 23);
+            this.txtSend.Size = new System.Drawing.Size(13, 21);
             this.txtSend.TabIndex = 1;
             // 
             // txtReceive
             // 
-            this.txtReceive.Location = new System.Drawing.Point(12, 12);
+            this.txtReceive.Location = new System.Drawing.Point(12, 11);
             this.txtReceive.Multiline = true;
             this.txtReceive.Name = "txtReceive";
             this.txtReceive.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtReceive.Size = new System.Drawing.Size(617, 39);
+            this.txtReceive.Size = new System.Drawing.Size(617, 37);
             this.txtReceive.TabIndex = 2;
             // 
             // btnOpen
             // 
             this.btnOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOpen.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpen.Location = new System.Drawing.Point(12, 14);
+            this.btnOpen.Location = new System.Drawing.Point(12, 13);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(88, 49);
+            this.btnOpen.Size = new System.Drawing.Size(88, 46);
             this.btnOpen.TabIndex = 0;
             this.btnOpen.Text = "Open";
             this.btnOpen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -122,9 +125,9 @@
             "COM7",
             "COM8",
             "COM9"});
-            this.cbPort.Location = new System.Drawing.Point(347, 39);
+            this.cbPort.Location = new System.Drawing.Point(347, 37);
             this.cbPort.Name = "cbPort";
-            this.cbPort.Size = new System.Drawing.Size(201, 24);
+            this.cbPort.Size = new System.Drawing.Size(201, 23);
             this.cbPort.TabIndex = 1;
             // 
             // serialPort1
@@ -133,14 +136,6 @@
             // 
             // dgv
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Horário,
@@ -152,19 +147,19 @@
             this.Poluente1,
             this.Poluente2,
             this.Poluente3});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv.EnableHeadersVisualStyles = false;
-            this.dgv.Location = new System.Drawing.Point(13, 89);
+            this.dgv.Location = new System.Drawing.Point(13, 83);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersVisible = false;
-            this.dgv.Size = new System.Drawing.Size(720, 222);
+            this.dgv.Size = new System.Drawing.Size(720, 208);
             this.dgv.TabIndex = 4;
             // 
             // Horário
@@ -212,17 +207,34 @@
             this.Poluente3.HeaderText = "Poluente3";
             this.Poluente3.Name = "Poluente3";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(235, 54);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 24);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Gerar Excel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtArquivoExcel
+            // 
+            this.txtArquivoExcel.Location = new System.Drawing.Point(13, 57);
+            this.txtArquivoExcel.Name = "txtArquivoExcel";
+            this.txtArquivoExcel.Size = new System.Drawing.Size(216, 21);
+            this.txtArquivoExcel.TabIndex = 6;
+            // 
             // frmSerial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(745, 475);
+            this.ClientSize = new System.Drawing.Size(745, 445);
             this.Controls.Add(this.cbPort);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmSerial";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmSerial_Load);
@@ -252,6 +264,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Poluente1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Poluente2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Poluente3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtArquivoExcel;
     }
 }
 
