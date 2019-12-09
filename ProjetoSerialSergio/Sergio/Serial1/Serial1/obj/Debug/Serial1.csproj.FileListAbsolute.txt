@@ -1,0 +1,10 @@
+P:\Informatica\Materiais Didaticos\Matutino\2o Semestre\Automação de Dispositivos\Projetos\Serial1\Serial1\bin\Debug\Serial1.exe.config
+P:\Informatica\Materiais Didaticos\Matutino\2o Semestre\Automação de Dispositivos\Projetos\Serial1\Serial1\bin\Debug\Serial1.exe
+P:\Informatica\Materiais Didaticos\Matutino\2o Semestre\Automação de Dispositivos\Projetos\Serial1\Serial1\bin\Debug\Serial1.pdb
+P:\Informatica\Materiais Didaticos\Matutino\2o Semestre\Automação de Dispositivos\Projetos\Serial1\Serial1\obj\Debug\Serial1.csprojResolveAssemblyReference.cache
+P:\Informatica\Materiais Didaticos\Matutino\2o Semestre\Automação de Dispositivos\Projetos\Serial1\Serial1\obj\Debug\Serial1.frmPrincipal.resources
+P:\Informatica\Materiais Didaticos\Matutino\2o Semestre\Automação de Dispositivos\Projetos\Serial1\Serial1\obj\Debug\Serial1.Properties.Resources.resources
+P:\Informatica\Materiais Didaticos\Matutino\2o Semestre\Automação de Dispositivos\Projetos\Serial1\Serial1\obj\Debug\Serial1.csproj.GenerateResource.Cache
+P:\Informatica\Materiais Didaticos\Matutino\2o Semestre\Automação de Dispositivos\Projetos\Serial1\Serial1\obj\Debug\Serial1.csproj.CoreCompileInputs.cache
+P:\Informatica\Materiais Didaticos\Matutino\2o Semestre\Automação de Dispositivos\Projetos\Serial1\Serial1\obj\Debug\Serial1.exe
+P:\Informatica\Materiais Didaticos\Matutino\2o Semestre\Automação de Dispositivos\Projetos\Serial1\Serial1\obj\Debug\Serial1.pdb

@@ -1,0 +1,10 @@
+F:\COTUCA\Curso Técnico de Informática\I Ano\Prototipagem de Dispositivos de Controle\Visual Studio\apSerial\apSerial\bin\Debug\apSerial.exe.config
+F:\COTUCA\Curso Técnico de Informática\I Ano\Prototipagem de Dispositivos de Controle\Visual Studio\apSerial\apSerial\bin\Debug\apSerial.exe
+F:\COTUCA\Curso Técnico de Informática\I Ano\Prototipagem de Dispositivos de Controle\Visual Studio\apSerial\apSerial\bin\Debug\apSerial.pdb
+F:\COTUCA\Curso Técnico de Informática\I Ano\Prototipagem de Dispositivos de Controle\Visual Studio\apSerial\apSerial\obj\Debug\apSerial.csprojResolveAssemblyReference.cache
+F:\COTUCA\Curso Técnico de Informática\I Ano\Prototipagem de Dispositivos de Controle\Visual Studio\apSerial\apSerial\obj\Debug\apSerial.Properties.Resources.resources
+F:\COTUCA\Curso Técnico de Informática\I Ano\Prototipagem de Dispositivos de Controle\Visual Studio\apSerial\apSerial\obj\Debug\apSerial.csproj.GenerateResource.Cache
+F:\COTUCA\Curso Técnico de Informática\I Ano\Prototipagem de Dispositivos de Controle\Visual Studio\apSerial\apSerial\obj\Debug\apSerial.csproj.CoreCompileInputs.cache
+F:\COTUCA\Curso Técnico de Informática\I Ano\Prototipagem de Dispositivos de Controle\Visual Studio\apSerial\apSerial\obj\Debug\apSerial.exe
+F:\COTUCA\Curso Técnico de Informática\I Ano\Prototipagem de Dispositivos de Controle\Visual Studio\apSerial\apSerial\obj\Debug\apSerial.pdb
+F:\COTUCA\Curso Técnico de Informática\I Ano\Prototipagem de Dispositivos de Controle\Visual Studio\apSerial\apSerial\obj\Debug\apSerial.frmSerial.resources
