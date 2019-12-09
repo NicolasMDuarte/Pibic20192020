@@ -32,7 +32,17 @@ namespace apSerial
                         (
                             delegate
                             {
-                                txtReceive.AppendText(inData);
+                                //txtReceive.AppendText(inData);
+                                string texto = inData;
+                                string[] linhas = texto.Split('\n');
+                                int qtd = linhas.Length;
+                                string sep = "\t";
+                                for(int i = 0; i<qtd; i++)
+                                {
+                                    string[] colunas = linhas[i].Split(sep.ToCharArray());
+                                    dgv.Rows.Add(colunas);
+                                }
+                                
                             }
                         )
                     );
