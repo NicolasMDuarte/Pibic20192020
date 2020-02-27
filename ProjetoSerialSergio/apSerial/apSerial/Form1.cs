@@ -58,6 +58,7 @@ namespace apSerial
                 }
 
                 // E SALVA
+                // colocar o path inteiro + txtArquivoExcel.Text;
                 xlWorkBook.SaveAs(txtArquivoExcel.Text, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue,
  Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
                 xlWorkBook.Close(true, misValue, misValue);
@@ -67,7 +68,7 @@ namespace apSerial
                 liberarObjetos(xlWorkBook);
                 liberarObjetos(xlApp);
 
-                MessageBox.Show("O arquivo Excel foi criado com sucesso. Você pode encontrá-lo em : " + txtArquivoExcel.Text);
+                MessageBox.Show("O arquivo Excel foi criado com sucesso. Você pode encontrá-lo em: " + txtArquivoExcel.Text);
             }
             catch (Exception ex)
             {
