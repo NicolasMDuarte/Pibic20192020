@@ -29,14 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.txtSend = new System.Windows.Forms.TextBox();
-            this.txtReceive = new System.Windows.Forms.TextBox();
-            this.btnOpen = new System.Windows.Forms.Button();
-            this.cbPort = new System.Windows.Forms.ComboBox();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.txtArquivoExcel = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.Horário = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Altitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,8 +42,12 @@
             this.Poluente1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Poluente2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Poluente3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtArquivoExcel = new System.Windows.Forms.TextBox();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.txtSend = new System.Windows.Forms.TextBox();
+            this.txtReceive = new System.Windows.Forms.TextBox();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.cbPort = new System.Windows.Forms.ComboBox();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
@@ -64,10 +63,92 @@
             this.panel1.Controls.Add(this.txtSend);
             this.panel1.Controls.Add(this.txtReceive);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 142);
+            this.panel1.Location = new System.Drawing.Point(0, 215);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(745, 303);
+            this.panel1.Size = new System.Drawing.Size(1104, 303);
             this.panel1.TabIndex = 0;
+            // 
+            // txtArquivoExcel
+            // 
+            this.txtArquivoExcel.Location = new System.Drawing.Point(13, 57);
+            this.txtArquivoExcel.Name = "txtArquivoExcel";
+            this.txtArquivoExcel.Size = new System.Drawing.Size(216, 21);
+            this.txtArquivoExcel.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(235, 54);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 24);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Gerar Excel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dgv
+            // 
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Horário,
+            this.Altitude,
+            this.Latitude,
+            this.Longitude,
+            this.Umidade,
+            this.Temperatura,
+            this.Poluente1,
+            this.Poluente2,
+            this.Poluente3});
+            this.dgv.EnableHeadersVisualStyles = false;
+            this.dgv.Location = new System.Drawing.Point(13, 83);
+            this.dgv.Name = "dgv";
+            this.dgv.RowHeadersVisible = false;
+            this.dgv.Size = new System.Drawing.Size(1079, 208);
+            this.dgv.TabIndex = 4;
+            // 
+            // Horário
+            // 
+            this.Horário.HeaderText = "Horário";
+            this.Horário.Name = "Horário";
+            // 
+            // Altitude
+            // 
+            this.Altitude.HeaderText = "Altitude";
+            this.Altitude.Name = "Altitude";
+            // 
+            // Latitude
+            // 
+            this.Latitude.HeaderText = "Latitude";
+            this.Latitude.Name = "Latitude";
+            // 
+            // Longitude
+            // 
+            this.Longitude.HeaderText = "Longitude";
+            this.Longitude.Name = "Longitude";
+            // 
+            // Umidade
+            // 
+            this.Umidade.HeaderText = "Umidade";
+            this.Umidade.Name = "Umidade";
+            // 
+            // Temperatura
+            // 
+            this.Temperatura.HeaderText = "Temperatura";
+            this.Temperatura.Name = "Temperatura";
+            // 
+            // Poluente1
+            // 
+            this.Poluente1.HeaderText = "Poluente1";
+            this.Poluente1.Name = "Poluente1";
+            // 
+            // Poluente2
+            // 
+            this.Poluente2.HeaderText = "Poluente2";
+            this.Poluente2.Name = "Poluente2";
+            // 
+            // Poluente3
+            // 
+            this.Poluente3.HeaderText = "Poluente3";
+            this.Poluente3.Name = "Poluente3";
             // 
             // btnSend
             // 
@@ -134,103 +215,13 @@
             // 
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
-            // dgv
-            // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Horário,
-            this.Altitude,
-            this.Latitude,
-            this.Longitude,
-            this.Umidade,
-            this.Temperatura,
-            this.Poluente1,
-            this.Poluente2,
-            this.Poluente3});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv.EnableHeadersVisualStyles = false;
-            this.dgv.Location = new System.Drawing.Point(13, 83);
-            this.dgv.Name = "dgv";
-            this.dgv.RowHeadersVisible = false;
-            this.dgv.Size = new System.Drawing.Size(720, 208);
-            this.dgv.TabIndex = 4;
-            // 
-            // Horário
-            // 
-            this.Horário.HeaderText = "Horário";
-            this.Horário.Name = "Horário";
-            // 
-            // Altitude
-            // 
-            this.Altitude.HeaderText = "Altitude";
-            this.Altitude.Name = "Altitude";
-            // 
-            // Latitude
-            // 
-            this.Latitude.HeaderText = "Latitude";
-            this.Latitude.Name = "Latitude";
-            // 
-            // Longitude
-            // 
-            this.Longitude.HeaderText = "Longitude";
-            this.Longitude.Name = "Longitude";
-            // 
-            // Umidade
-            // 
-            this.Umidade.HeaderText = "Umidade";
-            this.Umidade.Name = "Umidade";
-            // 
-            // Temperatura
-            // 
-            this.Temperatura.HeaderText = "Temperatura";
-            this.Temperatura.Name = "Temperatura";
-            // 
-            // Poluente1
-            // 
-            this.Poluente1.HeaderText = "Poluente1";
-            this.Poluente1.Name = "Poluente1";
-            // 
-            // Poluente2
-            // 
-            this.Poluente2.HeaderText = "Poluente2";
-            this.Poluente2.Name = "Poluente2";
-            // 
-            // Poluente3
-            // 
-            this.Poluente3.HeaderText = "Poluente3";
-            this.Poluente3.Name = "Poluente3";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(235, 54);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 24);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Gerar Excel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtArquivoExcel
-            // 
-            this.txtArquivoExcel.Location = new System.Drawing.Point(13, 57);
-            this.txtArquivoExcel.Name = "txtArquivoExcel";
-            this.txtArquivoExcel.Size = new System.Drawing.Size(216, 21);
-            this.txtArquivoExcel.TabIndex = 6;
-            // 
             // frmSerial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(745, 445);
+            this.ClientSize = new System.Drawing.Size(1104, 518);
             this.Controls.Add(this.cbPort);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.panel1);

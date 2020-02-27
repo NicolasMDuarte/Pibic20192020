@@ -1,0 +1,10 @@
+C:\Users\u19192\Documents\GitHub\Pibic20192020\apSerial\apSerial\bin\Debug\apSerial.exe.config
+C:\Users\u19192\Documents\GitHub\Pibic20192020\apSerial\apSerial\bin\Debug\apSerial.exe
+C:\Users\u19192\Documents\GitHub\Pibic20192020\apSerial\apSerial\bin\Debug\apSerial.pdb
+C:\Users\u19192\Documents\GitHub\Pibic20192020\apSerial\apSerial\obj\Debug\Teste.csprojAssemblyReference.cache
+C:\Users\u19192\Documents\GitHub\Pibic20192020\apSerial\apSerial\obj\Debug\Teste.csproj.ResolveComReference.cache
+C:\Users\u19192\Documents\GitHub\Pibic20192020\apSerial\apSerial\obj\Debug\apSerial.frmSerial.resources
+C:\Users\u19192\Documents\GitHub\Pibic20192020\apSerial\apSerial\obj\Debug\apSerial.Properties.Resources.resources
+C:\Users\u19192\Documents\GitHub\Pibic20192020\apSerial\apSerial\obj\Debug\Teste.csproj.GenerateResource.cache
+C:\Users\u19192\Documents\GitHub\Pibic20192020\apSerial\apSerial\obj\Debug\apSerial.exe
+C:\Users\u19192\Documents\GitHub\Pibic20192020\apSerial\apSerial\obj\Debug\apSerial.pdb

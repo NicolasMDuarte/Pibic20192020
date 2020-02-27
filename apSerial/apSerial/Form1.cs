@@ -14,7 +14,7 @@ namespace apSerial
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnGerar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -92,6 +92,22 @@ namespace apSerial
             {
                 GC.Collect();
             }
+        }
+
+        private void frmSerial_Load(object sender, EventArgs e)
+        {
+            
+            dgv.Rows.Add();
+            dgv.Rows[0].Cells[0].Value = "234";
+            dgv.Rows[0].Cells[1].Value = "nicolin";
+
+            dgv.Rows.Add();
+            dgv.Rows[1].Cells[0].Value = "345";
+            dgv.Rows[1].Cells[1].Value = "vicente";
+
+            dgv.Rows.Add();
+            dgv.Rows[2].Cells[0].Value = "155";
+            dgv.Rows[2].Cells[1].Value = "jovanna";
         }
     }
 }
