@@ -161,7 +161,6 @@
             this.btnSend.Text = "Send";
             this.btnSend.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // txtSend
             // 
@@ -191,7 +190,6 @@
             this.btnOpen.Text = "Open";
             this.btnOpen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // cbPort
             // 
@@ -211,10 +209,6 @@
             this.cbPort.Size = new System.Drawing.Size(201, 23);
             this.cbPort.TabIndex = 1;
             // 
-            // serialPort1
-            // 
-            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
-            // 
             // frmSerial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -228,7 +222,6 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmSerial";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.frmSerial_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
