@@ -1,0 +1,57 @@
+* BMP280
+SDA - A4
+SCL - A5
+GND - GND
+VCC - 3.3V
+
+*DHT11 (da esquerda p/ direita, com os furos pra frente)
+- 3.3V
+- D2
+- (null)
+- GND
+
+*MQ135
+A0 - A0
+D0 - D3
+GND - GND
+VCC - 5
+
+*Micro SD Card Adapter
+CS - D4
+SCK - D10
+MOSI - D11
+MISO - D12
+VCC - 5V
+GND - GND
+
+*Light Sensor GY-30
+GND - GND
+ADO - (null)
+SDA - A4   PORÉM   A6
+SCL - A5           A7
+VCC - 5V
+
+*Sensor de partículas (da esquerda p/ direita)
+- (null)
+- D8
+- 5V
+- (null)
+- GND
+
+*relógio rtc
+GND - GND
+VCC1 - 5V
+VCC2 - (null)
+SCLK - D5
+I/O - D6
+RST - D7
+
+*MICS6814
+(talvez tenham resistores de 47k ligando as portas analógicas conectados ao 3.3v)
+CO - A1
+NH3 - A2
+NO2 - A3
+GND - GND
++5V - 5V
+
+
