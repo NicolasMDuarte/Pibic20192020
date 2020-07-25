@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlDados = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtArquivoExcel = new System.Windows.Forms.TextBox();
             this.btnGerarExcel = new System.Windows.Forms.Button();
             this.dgv = new System.Windows.Forms.DataGridView();
@@ -45,16 +45,13 @@
             this.co = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.no2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nh3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.txtSend = new System.Windows.Forms.TextBox();
-            this.txtReceive = new System.Windows.Forms.TextBox();
             this.btnOpen = new System.Windows.Forms.Button();
             this.cbPort = new System.Windows.Forms.ComboBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.dlgAbrir = new System.Windows.Forms.OpenFileDialog();
             this.btnImportar = new System.Windows.Forms.Button();
             this.lbArqImportado = new System.Windows.Forms.Label();
+            this.txtReceive = new System.Windows.Forms.TextBox();
             this.pnlDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +69,17 @@
             this.pnlDados.Name = "pnlDados";
             this.pnlDados.Size = new System.Drawing.Size(1104, 461);
             this.pnlDados.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(13, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 21);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Nome do Arquivo:";
             // 
             // txtArquivoExcel
             // 
@@ -96,14 +104,6 @@
             // 
             // dgv
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Data,
@@ -179,35 +179,6 @@
             this.nh3.HeaderText = "NH3";
             this.nh3.Name = "nh3";
             // 
-            // btnSend
-            // 
-            this.btnSend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSend.Font = new System.Drawing.Font("Modern No. 20", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSend.Location = new System.Drawing.Point(683, 12);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(79, 46);
-            this.btnSend.TabIndex = 3;
-            this.btnSend.Text = "Send";
-            this.btnSend.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSend.UseVisualStyleBackColor = true;
-            // 
-            // txtSend
-            // 
-            this.txtSend.Enabled = false;
-            this.txtSend.Location = new System.Drawing.Point(653, 28);
-            this.txtSend.Name = "txtSend";
-            this.txtSend.Size = new System.Drawing.Size(13, 21);
-            this.txtSend.TabIndex = 1;
-            // 
-            // txtReceive
-            // 
-            this.txtReceive.Location = new System.Drawing.Point(480, 12);
-            this.txtReceive.Multiline = true;
-            this.txtReceive.Name = "txtReceive";
-            this.txtReceive.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtReceive.Size = new System.Drawing.Size(151, 37);
-            this.txtReceive.TabIndex = 2;
-            // 
             // btnOpen
             // 
             this.btnOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -233,21 +204,10 @@
             "COM7",
             "COM8",
             "COM9"});
-            this.cbPort.Location = new System.Drawing.Point(132, 12);
+            this.cbPort.Location = new System.Drawing.Point(22, 12);
             this.cbPort.Name = "cbPort";
-            this.cbPort.Size = new System.Drawing.Size(201, 23);
+            this.cbPort.Size = new System.Drawing.Size(289, 23);
             this.cbPort.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(13, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 21);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Nome do Arquivo:";
             // 
             // dlgAbrir
             // 
@@ -257,7 +217,7 @@
             // btnImportar
             // 
             this.btnImportar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportar.Location = new System.Drawing.Point(45, 41);
+            this.btnImportar.Location = new System.Drawing.Point(22, 41);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(233, 49);
             this.btnImportar.TabIndex = 4;
@@ -270,11 +230,19 @@
             this.lbArqImportado.AutoSize = true;
             this.lbArqImportado.BackColor = System.Drawing.Color.Transparent;
             this.lbArqImportado.ForeColor = System.Drawing.Color.Silver;
-            this.lbArqImportado.Location = new System.Drawing.Point(42, 93);
+            this.lbArqImportado.Location = new System.Drawing.Point(19, 101);
             this.lbArqImportado.Name = "lbArqImportado";
-            this.lbArqImportado.Size = new System.Drawing.Size(21, 15);
+            this.lbArqImportado.Size = new System.Drawing.Size(0, 15);
             this.lbArqImportado.TabIndex = 5;
-            this.lbArqImportado.Text = "aa";
+            // 
+            // txtReceive
+            // 
+            this.txtReceive.Location = new System.Drawing.Point(450, 12);
+            this.txtReceive.Multiline = true;
+            this.txtReceive.Name = "txtReceive";
+            this.txtReceive.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtReceive.Size = new System.Drawing.Size(487, 104);
+            this.txtReceive.TabIndex = 2;
             // 
             // frmSerial
             // 
@@ -289,11 +257,10 @@
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.pnlDados);
             this.Controls.Add(this.txtReceive);
-            this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.txtSend);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmSerial";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmSerial_Load);
             this.pnlDados.ResumeLayout(false);
             this.pnlDados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
@@ -307,9 +274,6 @@
         private System.Windows.Forms.Panel pnlDados;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.ComboBox cbPort;
-        private System.Windows.Forms.TextBox txtSend;
-        private System.Windows.Forms.TextBox txtReceive;
-        private System.Windows.Forms.Button btnSend;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Button btnGerarExcel;
@@ -329,6 +293,7 @@
         private System.Windows.Forms.OpenFileDialog dlgAbrir;
         private System.Windows.Forms.Button btnImportar;
         private System.Windows.Forms.Label lbArqImportado;
+        private System.Windows.Forms.TextBox txtReceive;
     }
 }
 

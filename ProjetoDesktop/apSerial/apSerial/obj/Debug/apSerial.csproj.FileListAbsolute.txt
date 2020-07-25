@@ -18,3 +18,14 @@ C:\Users\u19192\Documents\GitHub\Pibic20192020\ProjetoSerialSergio\apSerial\apSe
 C:\Users\u19192\Documents\GitHub\Pibic20192020\ProjetoSerialSergio\apSerial\apSerial\obj\Debug\apSerial.csproj.GenerateResource.cache
 C:\Users\u19192\Documents\GitHub\Pibic20192020\ProjetoSerialSergio\apSerial\apSerial\obj\Debug\apSerial.exe
 C:\Users\u19192\Documents\GitHub\Pibic20192020\ProjetoSerialSergio\apSerial\apSerial\obj\Debug\apSerial.pdb
+C:\Users\giova\Documents\GitHub\Pibic20192020\ProjetoDesktop\apSerial\apSerial\bin\Debug\apSerial.exe.config
+C:\Users\giova\Documents\GitHub\Pibic20192020\ProjetoDesktop\apSerial\apSerial\bin\Debug\apSerial.exe
+C:\Users\giova\Documents\GitHub\Pibic20192020\ProjetoDesktop\apSerial\apSerial\bin\Debug\apSerial.pdb
+C:\Users\giova\Documents\GitHub\Pibic20192020\ProjetoDesktop\apSerial\apSerial\obj\Debug\apSerial.csprojAssemblyReference.cache
+C:\Users\giova\Documents\GitHub\Pibic20192020\ProjetoDesktop\apSerial\apSerial\obj\Debug\apSerial.csproj.ResolveComReference.cache
+C:\Users\giova\Documents\GitHub\Pibic20192020\ProjetoDesktop\apSerial\apSerial\obj\Debug\apSerial.frmSerial.resources
+C:\Users\giova\Documents\GitHub\Pibic20192020\ProjetoDesktop\apSerial\apSerial\obj\Debug\apSerial.Properties.Resources.resources
+C:\Users\giova\Documents\GitHub\Pibic20192020\ProjetoDesktop\apSerial\apSerial\obj\Debug\apSerial.csproj.GenerateResource.cache
+C:\Users\giova\Documents\GitHub\Pibic20192020\ProjetoDesktop\apSerial\apSerial\obj\Debug\apSerial.csproj.CoreCompileInputs.cache
+C:\Users\giova\Documents\GitHub\Pibic20192020\ProjetoDesktop\apSerial\apSerial\obj\Debug\apSerial.exe
+C:\Users\giova\Documents\GitHub\Pibic20192020\ProjetoDesktop\apSerial\apSerial\obj\Debug\apSerial.pdb

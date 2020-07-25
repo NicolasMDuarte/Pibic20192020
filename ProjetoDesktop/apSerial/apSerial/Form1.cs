@@ -14,15 +14,19 @@ namespace apSerial
             InitializeComponent();
         }
 
-        /*
-         dgv.Rows.Add();
-            dgv.Rows[0].Cells[0].Value = "234";
-            dgv.Rows[0].Cells[1].Value = "nicolin";
-            */
-
-
         private void btnGerarExcel_Click(object sender, EventArgs e)
         {
+            if (txtArquivoExcel.Text == null)
+            {
+                MessageBox.Show("Insira o nome que deseja para o arquivo Excel!", "Preencha os campos", MessageBoxButtons.OK);
+                return;
+            }
+            if (dgv[0, 0].Value == null)
+            {
+                MessageBox.Show("Nenhum dado foi importado ainda.\n Importe via Serial ou via Arquivo Texto.", "Importe os dados", MessageBoxButtons.OK);
+                return;
+            }
+
             try
             {
                 // CRIA O ARQUIVO
@@ -66,7 +70,8 @@ namespace apSerial
 
                 // E SALVA
                 // colocar o path inteiro + txtArquivoExcel.Text;
-                xlWorkBook.SaveAs(txtArquivoExcel.Text, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue,
+                String nomeArq = "C:\\Users\\giova\\Desktop\\" + txtArquivoExcel.Text;
+                xlWorkBook.SaveAs(nomeArq, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue,
  Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
                 xlWorkBook.Close(true, misValue, misValue);
                 xlApp.Quit();
@@ -75,13 +80,15 @@ namespace apSerial
                 liberarObjetos(xlWorkBook);
                 liberarObjetos(xlApp);
 
-                MessageBox.Show("O arquivo Excel foi criado com sucesso. Você pode encontrá-lo em: " + txtArquivoExcel.Text);
+                MessageBox.Show("O arquivo Excel foi criado com sucesso. Você pode encontrá-lo na sua Área de Trabalho, com o nome: " + txtArquivoExcel.Text);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro : " + ex.Message);
             }
-
+            // cria o nosso arquivo vazio e cria a pasta3 com os dados
+            // o excel ta indo pra ca C:\Users\giova\Documents
+            // tentar trocar o design da tabela
         }
 
         private void liberarObjetos(object obj)
@@ -104,7 +111,6 @@ namespace apSerial
 
         private void btnImportar_Click(object sender, EventArgs e)
         {
-            dlgAbrir.ShowDialog();
             dlgAbrir.Title = "Selecione o arquivo com os dados coletados do drone";
             if (dlgAbrir.ShowDialog() == DialogResult.OK)
             {
@@ -116,16 +122,26 @@ namespace apSerial
         private void LerDados(string nomeArq)
         {
             var arq = new StreamReader(nomeArq, System.Text.Encoding.UTF7);
-
+            int linha = 0;
             while (!arq.EndOfStream)
             {
                 string linhaLida = arq.ReadLine();
                 var dados = linhaLida.Split('\t');
-                DataGridViewRow row = new DataGridViewRow();
-                row.SetValues(dados);
-                dgv.Rows.Add(row);
+                dgv.Rows.Add(dados);
+                //for(int i=0; i<dados.Length; i++)
+                //{
+                //    dgv[linha,i].Value = dados[i];
+                //}
+                linha++;
             }
+            //dgv.Rows.RemoveAt(linha);
             arq.Close();
+        }
+        //a   b   c
+        //d   e  f
+        private void frmSerial_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
