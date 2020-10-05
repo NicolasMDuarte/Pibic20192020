@@ -45,13 +45,16 @@
             this.co = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.no2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nh3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnOpen = new System.Windows.Forms.Button();
-            this.cbPort = new System.Windows.Forms.ComboBox();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.cbxPortas = new System.Windows.Forms.ComboBox();
+            this.spPorta = new System.IO.Ports.SerialPort(this.components);
             this.dlgAbrir = new System.Windows.Forms.OpenFileDialog();
             this.btnImportar = new System.Windows.Forms.Button();
             this.lbArqImportado = new System.Windows.Forms.Label();
-            this.txtReceive = new System.Windows.Forms.TextBox();
+            this.txtReceber = new System.Windows.Forms.TextBox();
+            this.tmrTempo = new System.Windows.Forms.Timer(this.components);
+            this.btnConectar = new System.Windows.Forms.Button();
+            this.txtEnviar = new System.Windows.Forms.TextBox();
             this.pnlDados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
@@ -65,9 +68,9 @@
             this.pnlDados.Controls.Add(this.btnGerarExcel);
             this.pnlDados.Controls.Add(this.dgv);
             this.pnlDados.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlDados.Location = new System.Drawing.Point(0, 129);
+            this.pnlDados.Location = new System.Drawing.Point(0, 146);
             this.pnlDados.Name = "pnlDados";
-            this.pnlDados.Size = new System.Drawing.Size(1104, 461);
+            this.pnlDados.Size = new System.Drawing.Size(1104, 444);
             this.pnlDados.TabIndex = 0;
             // 
             // label1
@@ -179,22 +182,23 @@
             this.nh3.HeaderText = "NH3";
             this.nh3.Name = "nh3";
             // 
-            // btnOpen
+            // btnEnviar
             // 
-            this.btnOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpen.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpen.Location = new System.Drawing.Point(339, 12);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(88, 36);
-            this.btnOpen.TabIndex = 0;
-            this.btnOpen.Text = "Open";
-            this.btnOpen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnEnviar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEnviar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviar.Location = new System.Drawing.Point(290, 38);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(75, 34);
+            this.btnEnviar.TabIndex = 0;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
-            // cbPort
+            // cbxPortas
             // 
-            this.cbPort.FormattingEnabled = true;
-            this.cbPort.Items.AddRange(new object[] {
+            this.cbxPortas.FormattingEnabled = true;
+            this.cbxPortas.Items.AddRange(new object[] {
             "COM1",
             "COM2",
             "COM3",
@@ -204,10 +208,14 @@
             "COM7",
             "COM8",
             "COM9"});
-            this.cbPort.Location = new System.Drawing.Point(22, 12);
-            this.cbPort.Name = "cbPort";
-            this.cbPort.Size = new System.Drawing.Size(289, 23);
-            this.cbPort.TabIndex = 1;
+            this.cbxPortas.Location = new System.Drawing.Point(12, 7);
+            this.cbxPortas.Name = "cbxPortas";
+            this.cbxPortas.Size = new System.Drawing.Size(266, 23);
+            this.cbxPortas.TabIndex = 1;
+            // 
+            // spPorta
+            // 
+            this.spPorta.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.spPorta_DataReceived);
             // 
             // dlgAbrir
             // 
@@ -217,7 +225,7 @@
             // btnImportar
             // 
             this.btnImportar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportar.Location = new System.Drawing.Point(22, 41);
+            this.btnImportar.Location = new System.Drawing.Point(78, 82);
             this.btnImportar.Name = "btnImportar";
             this.btnImportar.Size = new System.Drawing.Size(233, 49);
             this.btnImportar.TabIndex = 4;
@@ -235,14 +243,38 @@
             this.lbArqImportado.Size = new System.Drawing.Size(0, 15);
             this.lbArqImportado.TabIndex = 5;
             // 
-            // txtReceive
+            // txtReceber
             // 
-            this.txtReceive.Location = new System.Drawing.Point(450, 12);
-            this.txtReceive.Multiline = true;
-            this.txtReceive.Name = "txtReceive";
-            this.txtReceive.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtReceive.Size = new System.Drawing.Size(487, 104);
-            this.txtReceive.TabIndex = 2;
+            this.txtReceber.Location = new System.Drawing.Point(423, 7);
+            this.txtReceber.Multiline = true;
+            this.txtReceber.Name = "txtReceber";
+            this.txtReceber.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtReceber.Size = new System.Drawing.Size(464, 130);
+            this.txtReceber.TabIndex = 2;
+            // 
+            // tmrTempo
+            // 
+            this.tmrTempo.Tick += new System.EventHandler(this.tmrTempo_Tick);
+            // 
+            // btnConectar
+            // 
+            this.btnConectar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConectar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConectar.Location = new System.Drawing.Point(290, 2);
+            this.btnConectar.Name = "btnConectar";
+            this.btnConectar.Size = new System.Drawing.Size(105, 34);
+            this.btnConectar.TabIndex = 6;
+            this.btnConectar.Text = "Conectar";
+            this.btnConectar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConectar.UseVisualStyleBackColor = true;
+            // 
+            // txtEnviar
+            // 
+            this.txtEnviar.Location = new System.Drawing.Point(12, 38);
+            this.txtEnviar.Multiline = true;
+            this.txtEnviar.Name = "txtEnviar";
+            this.txtEnviar.Size = new System.Drawing.Size(266, 30);
+            this.txtEnviar.TabIndex = 7;
             // 
             // frmSerial
             // 
@@ -251,15 +283,18 @@
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1104, 590);
+            this.Controls.Add(this.txtEnviar);
+            this.Controls.Add(this.btnConectar);
             this.Controls.Add(this.lbArqImportado);
             this.Controls.Add(this.btnImportar);
-            this.Controls.Add(this.cbPort);
-            this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.cbxPortas);
+            this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.pnlDados);
-            this.Controls.Add(this.txtReceive);
+            this.Controls.Add(this.txtReceber);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmSerial";
-            this.Text = "Form1";
+            this.Text = "PIBIC 19-20";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSerial_FormClosed);
             this.Load += new System.EventHandler(this.frmSerial_Load);
             this.pnlDados.ResumeLayout(false);
             this.pnlDados.PerformLayout();
@@ -272,9 +307,9 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlDados;
-        private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.ComboBox cbPort;
-        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.ComboBox cbxPortas;
+        private System.IO.Ports.SerialPort spPorta;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Button btnGerarExcel;
         private System.Windows.Forms.TextBox txtArquivoExcel;
@@ -293,7 +328,10 @@
         private System.Windows.Forms.OpenFileDialog dlgAbrir;
         private System.Windows.Forms.Button btnImportar;
         private System.Windows.Forms.Label lbArqImportado;
-        private System.Windows.Forms.TextBox txtReceive;
+        private System.Windows.Forms.TextBox txtReceber;
+        private System.Windows.Forms.Timer tmrTempo;
+        private System.Windows.Forms.Button btnConectar;
+        private System.Windows.Forms.TextBox txtEnviar;
     }
 }
 
